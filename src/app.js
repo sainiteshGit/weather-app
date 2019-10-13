@@ -9,6 +9,7 @@ console.log(path.join(__dirname,'../public/'))
 console.log();
 
 const app=express()
+const port=process.env.PORT||3000
 
 const pub_dir=path.join(__dirname,'../public')
 const viewsPath=path.join(__dirname,'../templates/views')
@@ -103,6 +104,6 @@ app.get('*',(req,res)=>{
 res.send('<h1>404 Page</h1>')
 })
 
-app.listen(3000,()=>{
-    console.log('Server is up on port 3000')
+app.listen(port,()=>{
+    console.log('Server is up on port '+port)
 })
